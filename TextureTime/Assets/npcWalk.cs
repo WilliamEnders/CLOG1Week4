@@ -11,11 +11,11 @@ public class npcWalk : MonoBehaviour {
 		once = true;
 		calcnew = true;
 		isWalking = false;
-		newPos = new Vector3(Random.Range(-3.0f, 3.0f), 0, transform.position.z);
+		newPos = new Vector3(Random.Range(-5f, 5f), 0, transform.position.z);
 	
 	}
 	void getNewPos(){
-		newPos = new Vector3(Random.Range(-3.0f, 3.0f), 0, transform.position.z);
+		newPos = new Vector3(Random.Range(-5.0f, 5.0f), 0, transform.position.z);
 		calcnew = true;
 	}
 	
@@ -35,7 +35,7 @@ public class npcWalk : MonoBehaviour {
 			} else {
 				if (calcnew) {
 					transform.GetChild (1).GetComponent<Animator> ().Play ("bottomidle");
-					Invoke ("getNewPos", Random.Range (2f, 5f));
+					Invoke ("getNewPos", Random.Range (2f, 10f));
 					calcnew = false;
 				}
 			}
